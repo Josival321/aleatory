@@ -1,0 +1,13 @@
+import { jikanNoResults, jikanResults } from '../interfaces/jikanResponse';
+import { nekosResult } from '../interfaces/nekosLifeResponse';
+export declare function baka(): Promise<nekosResult>;
+export declare function pat(): Promise<nekosResult>;
+export declare function feed(): Promise<nekosResult>;
+export declare function trap(): Promise<nekosResult>;
+export declare function poke(): Promise<nekosResult>;
+export declare function kiss(): Promise<nekosResult>;
+export declare function cuddle(): Promise<nekosResult>;
+export declare function hug(): Promise<nekosResult>;
+export declare function slap(): Promise<nekosResult>;
+export declare function smug(): Promise<nekosResult>;
+export declare function search(name: string): Promise<jikanResults | jikanNoResults>;

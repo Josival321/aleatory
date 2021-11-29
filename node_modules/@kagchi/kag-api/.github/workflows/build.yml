@@ -1,0 +1,26 @@
+name: Test build code
+
+on:
+  push:
+    branches:
+      - "**"
+  pull_request:
+    branches:
+      - "**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [12.x, 14.x]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Installing Node.js v${{ matrix.node }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Installing dependencies
+        run: npm install
+      - name: Build code
+        run: npm run build
